@@ -5,12 +5,13 @@ import java.util.concurrent.RecursiveTask;
 
 public class MyForkFoinPool {
 
-    static int numOperations = 1000;
-    static int numThreads = Runtime.getRuntime().availableProcessors();
+    final static int numOperations = 1000;
+    final static int numThreads = Runtime.getRuntime().availableProcessors();
 
     static class MyFork extends RecursiveTask<Integer> {
 
-        int begin, end;
+        int begin;
+        int end;
 
         public MyFork(int begin, int end) {
             this.begin = begin;
@@ -35,8 +36,11 @@ public class MyForkFoinPool {
                 return firstPart.join() + secondValue;
             }
         }
-    }    public static void main(String[] args) {
+    }
+
+    public static void main(String[] args) {
         ForkJoinPool forkJoinPool = new ForkJoinPool(numThreads);
         System.out.println(forkJoinPool.invoke(new MyFork(1, numOperations)));
     }
+
 }

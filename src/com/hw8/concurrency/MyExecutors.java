@@ -5,14 +5,14 @@ import java.util.concurrent.Executors;
 
 public class MyExecutors {
 
-    static class MyThread1 extends Thread{
+    static class MyThread1 extends Thread {
         @Override
         public void run() {
             System.out.println("First Thread");
         }
     }
 
-    static class MyThread2 extends Thread{
+    static class MyThread2 extends Thread {
         @Override
         public void run() {
             System.out.println("Second Thread");
@@ -25,4 +25,5 @@ public class MyExecutors {
         executorService.submit(new MyThread2());
         executorService.shutdown();
     }
+
 }

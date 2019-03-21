@@ -10,12 +10,12 @@ public class MyCallableFuture {
     static class MyCallable implements Callable<Integer> {
         @Override
         public Integer call() throws Exception {
-            int i = 0;
-            while (i != 10) {
-                ++i;
+            int result = 0;
+            while (result != 10) {
+                ++result;
             }
             Thread.sleep(1000);
-            return i;
+            return result;
         }
     }
 
@@ -25,4 +25,5 @@ public class MyCallableFuture {
         new Thread(futureTask).start();
         System.out.println(futureTask.get());
     }
+
 }
