@@ -5,8 +5,8 @@ import java.util.concurrent.RecursiveTask;
 
 public class MyForkFoinPool {
 
-    final static int numOperations = 1000;
-    final static int numThreads = Runtime.getRuntime().availableProcessors();
+    private final static int numOperations = 1000;
+    private final static int numThreads = Runtime.getRuntime().availableProcessors();
 
     static class MyFork extends RecursiveTask<Integer> {
 

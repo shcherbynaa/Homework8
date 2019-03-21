@@ -4,7 +4,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class MyExecutors {
-
     static class MyThread1 extends Thread {
         @Override
         public void run() {
@@ -25,5 +24,4 @@ public class MyExecutors {
         executorService.submit(new MyThread2());
         executorService.shutdown();
     }
-
 }
